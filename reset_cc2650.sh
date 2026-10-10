@@ -74,9 +74,9 @@ openocd \
     -f /usr/share/openocd/scripts/interface/xds110.cfg \
     -c "adapter serial $SERIAL" \
     -c "transport select jtag" \
-    -c "adapter speed 100" \
+    -c "adapter speed 1000" \
     -f /usr/share/openocd/scripts/target/ti_cc26x0.cfg \
-    -c "cortex_m reset_config sysresetreq" \
+    -c "reset_config srst_only srst_nogate" \
     -c "init" \
     -c "reset run" \
     -c "shutdown"
